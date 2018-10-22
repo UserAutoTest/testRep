@@ -1,0 +1,13 @@
+C:\Users\Anuitex\source\repos\UIAnuitexAutoProject\UIAnuitexAutoProject\obj\Debug\UIAnuitexAutoProject.csprojAssemblyReference.cache
+C:\Users\Anuitex\source\repos\UIAnuitexAutoProject\UIAnuitexAutoProject\obj\Debug\UIAnuitexAutoProject.csproj.CoreCompileInputs.cache
+C:\Users\Anuitex\source\repos\UIAnuitexAutoProject\UIAnuitexAutoProject\bin\Debug\UIAnuitexAutoProject.dll.config
+C:\Users\Anuitex\source\repos\UIAnuitexAutoProject\UIAnuitexAutoProject\bin\Debug\UIAnuitexAutoProject.dll
+C:\Users\Anuitex\source\repos\UIAnuitexAutoProject\UIAnuitexAutoProject\bin\Debug\UIAnuitexAutoProject.pdb
+C:\Users\Anuitex\source\repos\UIAnuitexAutoProject\UIAnuitexAutoProject\bin\Debug\nunit.framework.dll
+C:\Users\Anuitex\source\repos\UIAnuitexAutoProject\UIAnuitexAutoProject\bin\Debug\WebDriver.dll
+C:\Users\Anuitex\source\repos\UIAnuitexAutoProject\UIAnuitexAutoProject\bin\Debug\nunit.framework.pdb
+C:\Users\Anuitex\source\repos\UIAnuitexAutoProject\UIAnuitexAutoProject\bin\Debug\nunit.framework.xml
+C:\Users\Anuitex\source\repos\UIAnuitexAutoProject\UIAnuitexAutoProject\bin\Debug\WebDriver.xml
+C:\Users\Anuitex\source\repos\UIAnuitexAutoProject\UIAnuitexAutoProject\obj\Debug\UIAnuitexAutoProject.csproj.CopyComplete
+C:\Users\Anuitex\source\repos\UIAnuitexAutoProject\UIAnuitexAutoProject\obj\Debug\UIAnuitexAutoProject.dll
+C:\Users\Anuitex\source\repos\UIAnuitexAutoProject\UIAnuitexAutoProject\obj\Debug\UIAnuitexAutoProject.pdb
