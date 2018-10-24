@@ -6,18 +6,17 @@ using System.Text;
 using System.Threading.Tasks;
 using UIAnuitexAutoProject.Framework;
 using UIAnuitexAutoProject.Framework.HomePage;
+using UIAnuitexAutoProject.Framework.Models;
 
 namespace UIAnuitexAutoProject.Test
 {
-    public class CreateAccount : BaseTest
+    public class CreateEditAccount : BaseTest
     {
 
         [Test]
         public void CreateNewAccount()
         {
             HomePage homePage = new HomePage(Driver);
-            AllProductInCategoryPage televisionsVideoPage = new AllProductInCategoryPage(Driver);
-            ProductDetailsPage productDetailsPage = new ProductDetailsPage(Driver);
             RightNavMenu rightNavMenu = new RightNavMenu(Driver);
             CreateYourAccount createYourAccount = new CreateYourAccount(Driver);
             ProfilePage profilePage = new ProfilePage(Driver);
@@ -34,6 +33,30 @@ namespace UIAnuitexAutoProject.Test
                 .ClickCreateAccountButton();
             profilePage
                 .ClickAccountIconForSignInUser();
+
+            Assert.AreEqual("TN", homePage.GetAcountIconValue(), "User is creadet successfuly");
+        }
+
+
+        [Test]
+        public void EditAccount()
+        {
+            HomePage homePage = new HomePage(Driver);            
+            RightNavMenu rightNavMenu = new RightNavMenu(Driver);
+            CreateYourAccount createYourAccount = new CreateYourAccount(Driver);
+            ProfilePage profilePage = new ProfilePage(Driver);
+            JsonConverter jsonConverter = new JsonConverter();
+            UserFromJson user = jsonConverter.GetUser();            
+            SignInPage signInPage = new SignInPage(Driver);
+
+            homePage
+                .ClickAccountIcon();
+            rightNavMenu
+                .ClickSignInLink();
+            signInPage
+                .FillInEmailAddressInput(user)
+                .FillInPasswordInput(user)
+                .ClickSignInButton();
 
             Assert.AreEqual("TN", homePage.GetAcountIconValue(), "User is creadet successfuly");
         }

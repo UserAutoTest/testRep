@@ -14,10 +14,18 @@ namespace UIAnuitexAutoProject.Framework
         public IWebElement AccountIconForSignInUser => _driver.FindElement(
             By.XPath(".//button[@data-automation-id='BubbleButtonheader-GlobalHeaderBubblesNav-Account']"));
 
+        public IWebElement ProfilePasswordMenuItem => _driver.FindElement(By.XPath(".//a[@data-title='Profile & Password']"));
+
         public ProfilePage ClickAccountIconForSignInUser()
         {
             _driver.WaitForElementToBeVisible(By.XPath(".//button[@data-automation-id='BubbleButtonheader-GlobalHeaderBubblesNav-Account']"));
             AccountIconForSignInUser.Click();
+            return this;
+        }
+
+        public ProfilePage ClickProfilePasswordMenuItem()
+        {
+            ProfilePasswordMenuItem.Click();
             return this;
         }
 

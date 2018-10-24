@@ -13,9 +13,17 @@ namespace UIAnuitexAutoProject.Framework
 
         public IWebElement CreateAccountLink => _driver.FindElement(By.XPath(".//div[contains(text(), 'Create Account')]"));
 
+        public IWebElement SignInLink => _driver.FindElement(By.XPath(".//div[contains(text(), 'Sign In')]"));
+
         public RightNavMenu ClickCreateAccountLink()
         {
             CreateAccountLink.Click();
+            return this;
+        }
+
+        public RightNavMenu ClickSignInLink()
+        {
+            SignInLink.Click();
             return this;
         }
     }
