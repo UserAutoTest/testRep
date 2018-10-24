@@ -43,9 +43,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Framework\AllProductInCategoryPage.cs" />
     <Compile Include="Framework\BaseTest.cs" />
+    <Compile Include="Framework\CheckOutPage.cs" />
+    <Compile Include="Framework\FulFllmentCheckOut.cs" />
     <Compile Include="Framework\HomePage\HomePage.cs" />
     <Compile Include="Framework\PageObject.cs" />
+    <Compile Include="Framework\ProductDetailsPage.cs" />
     <Compile Include="Test\FirstTest.cs" />
   </ItemGroup>
   <ItemGroup>

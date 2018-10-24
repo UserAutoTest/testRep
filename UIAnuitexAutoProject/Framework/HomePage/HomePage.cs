@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,13 +8,29 @@ using System.Threading.Tasks;
 
 namespace UIAnuitexAutoProject.Framework.HomePage
 {
-    public class HomePage: PageObject
+    public class HomePage : PageObject
     {
-        public HomePage(IWebDriver driver): base(driver) { }
+        public HomePage(IWebDriver driver) : base(driver) { }
 
-        public IWebElement MenuButton => _driver.FindElement(By.XPath(".//button[@aria-label='Menu']"));
+        public IWebElement MenuButton => _driver.FindElement(
+            By.XPath(".//button[@aria-label='Menu']"));
 
-        public IWebElement CategoryList => _driver.FindElement(By.XPath(".//div[@data-tl-id='GlobalHeaderDepartmentsMenu-flyout']"));
+        public IWebElement FirstCategory => _driver.FindElement(
+            By.XPath(".//div[@data-tl-id='GlobalHeaderDepartmentsMenu-flyout'][2]"));
+
+        public IWebElement FirstSubCategory => _driver.FindElement(
+            By.XPath(".//a[@data-uid='LHN-1-DEPT-2']"));
+
+        public IWebElement Inches75TVCategory => _driver.FindElement(
+            By.XPath(".//a[@aria-label='75 Inch TVs & Up']"));
+
+
+
+        public AllProductInCategoryPage ClickInches75TVCategory()
+        {
+            Inches75TVCategory.Click();
+            return new AllProductInCategoryPage(_driver);
+        }
 
         public HomePage ClickMenuButton()
         {
@@ -21,12 +38,17 @@ namespace UIAnuitexAutoProject.Framework.HomePage
             return this;
         }
 
-        public IList<String> GetAllCategoryList()
+        public HomePage ClickAndHoldFirstCategory()
         {
-            List<String> categoryList = new List<String>();
-            categoryList.Add(CategoryList.Text);
-            return categoryList;
+            Actions action = new Actions(_driver);
+            action.DoubleClick(FirstCategory).Perform();
+            return this;
         }
 
+        public HomePage ClickFirstSubCategory()
+        {
+            FirstSubCategory.Click();
+            return this;
+        }
     }
 }
