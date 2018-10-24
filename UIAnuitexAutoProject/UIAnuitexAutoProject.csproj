@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" />
   <Import Project="..\packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -46,11 +47,16 @@
     <Compile Include="Framework\AllProductInCategoryPage.cs" />
     <Compile Include="Framework\BaseTest.cs" />
     <Compile Include="Framework\CheckOutPage.cs" />
+    <Compile Include="Framework\CreateYourAccount.cs" />
+    <Compile Include="Framework\Extensions.cs" />
     <Compile Include="Framework\FulFllmentCheckOut.cs" />
+    <Compile Include="Framework\Helper.cs" />
     <Compile Include="Framework\HomePage\HomePage.cs" />
     <Compile Include="Framework\PageObject.cs" />
     <Compile Include="Framework\ProductDetailsPage.cs" />
-    <Compile Include="Test\FirstTest.cs" />
+    <Compile Include="Framework\RightNavMenu.cs" />
+    <Compile Include="Framework\ProfilePage.cs" />
+    <Compile Include="Test\CreateAccount.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="nunit.framework, Version=3.11.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
@@ -68,5 +74,6 @@
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.11.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.10.0\build\net35\NUnit3TestAdapter.props'))" />
   </Target>
 </Project>

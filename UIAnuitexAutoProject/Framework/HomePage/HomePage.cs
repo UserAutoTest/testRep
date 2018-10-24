@@ -12,6 +12,9 @@ namespace UIAnuitexAutoProject.Framework.HomePage
     {
         public HomePage(IWebDriver driver) : base(driver) { }
 
+        public IWebElement AccountIcon => _driver.FindElement(
+            By.XPath(".//span[@alt='Icon for User Nav']"));
+
         public IWebElement MenuButton => _driver.FindElement(
             By.XPath(".//button[@aria-label='Menu']"));
 
@@ -24,7 +27,15 @@ namespace UIAnuitexAutoProject.Framework.HomePage
         public IWebElement Inches75TVCategory => _driver.FindElement(
             By.XPath(".//a[@aria-label='75 Inch TVs & Up']"));
 
+        public IWebElement AcountIconValue => _driver.FindElement(
+            By.XPath(".//div[@data-tl-id='GlobalAccountMenu-header']/span"));
 
+
+        public AllProductInCategoryPage ClickAccountIcon()
+        {
+            AccountIcon.Click();
+            return new AllProductInCategoryPage(_driver);
+        }
 
         public AllProductInCategoryPage ClickInches75TVCategory()
         {
@@ -49,6 +60,12 @@ namespace UIAnuitexAutoProject.Framework.HomePage
         {
             FirstSubCategory.Click();
             return this;
+        }
+
+        public String GetAcountIconValue()
+        {
+            string iconValue = AcountIconValue.Text;
+            return iconValue;
         }
     }
 }
