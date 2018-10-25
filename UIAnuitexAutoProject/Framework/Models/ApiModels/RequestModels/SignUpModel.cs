@@ -10,25 +10,25 @@ namespace UIAnuitexAutoProject.Framework.Models.ApiModels.RequestModels
     public class SignUpModel
     {        
         [JsonProperty("captcha")]
-        public Captcha Captcha { get; set; }
+        public Captcha captcha { get; set; }
 
         [JsonProperty("personName")]
-        public PersonNameModel PersonName { get; set; }
+        public PersonNameModel personName { get; set; }
 
         [JsonProperty("email")]
-        public string Email { get; set; }
+        public string email { get; set; }
 
         [JsonProperty("password")]
-        public string Password { get; set; }
+        public string password { get; set; }
 
         [JsonProperty("rememberme")]
-        public bool Rememberme { get; set; }
+        public bool rememberme { get; set; }
 
         [JsonProperty("showRememberme")]
-        public bool ShowRememberme { get; set; }
+        public bool showRememberme { get; set; }
 
         [JsonProperty("emailNotificationAccepted")]
-        public bool EmailNotificationAccepted { get; set; }
+        public bool emailNotificationAccepted { get; set; }
     }
 }
 

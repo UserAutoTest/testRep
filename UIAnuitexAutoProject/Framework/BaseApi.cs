@@ -20,7 +20,7 @@ namespace UIAnuitexAutoProject.Framework
 
             var request = new RestRequest($"{path}{urlSegment}", Method.POST);
             request.RequestFormat = DataFormat.Json;
-            var str = "reflectorid: 0000000000000000000000@lastupd: 1540450519208@firstcreate: 1540450518129";
+            var str = "reflectorid:0000000000000000000000@lastupd:1540450519208@firstcreate:1540450518129";
 
             request.AddParameter("Content-Type", "application/json; charset=utf-8");
             request.AddParameter("ref","domain");           
@@ -39,7 +39,7 @@ namespace UIAnuitexAutoProject.Framework
             request.AddCookie("_scid", "673e2428-5776-46e6-81b6-d7fe3f7aaeb7");
             request.AddCookie("_sctr", "1|1540414800000");
             request.AddCookie("bstc", "dB-sjxZ_lJY-F7iXZ_iW3U");
-            request.AddCookie("com.wm.reflector", $"{str}");
+            request.AddCookie("com.wm.reflector", $"\"{str}\"");
             request.AddCookie("cto_lwid", "8437471b-fb22-4bc4-aafb-6b0d69cd393d");
             request.AddCookie("customer", "%7B%22firstName%22%3A%22Ann%22%2C%22lastNameInitial%22%3A%22T%22%2C%22rememberme%22%3Atrue%7D");
             request.AddCookie("dfp_exp", "ads-mweb-skyline-control");

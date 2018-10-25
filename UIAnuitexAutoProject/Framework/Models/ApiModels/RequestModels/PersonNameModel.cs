@@ -10,9 +10,9 @@ namespace UIAnuitexAutoProject.Framework.Models.ApiModels.RequestModels
     public class PersonNameModel
     {
         [JsonProperty("firstName")]
-        public string FirstName { get; set; }
+        public string firstName { get; set; }
 
         [JsonProperty("lastName")]
-        public string LastName { get; set; }
+        public string lastName { get; set; }
     }
 }
