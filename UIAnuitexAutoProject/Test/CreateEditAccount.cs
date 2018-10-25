@@ -57,8 +57,42 @@ namespace UIAnuitexAutoProject.Test
                 .FillInEmailAddressInput(user)
                 .FillInPasswordInput(user)
                 .ClickSignInButton();
+            profilePage
+                .ClickAccountIconForSignInUser();
 
             Assert.AreEqual("TN", homePage.GetAcountIconValue(), "User is creadet successfuly");
+            }
+
+        [Test]
+        public void AddProductInCartLoggedInUser()
+        {
+            HomePage homePage = new HomePage(Driver);
+            RightNavMenu rightNavMenu = new RightNavMenu(Driver);
+            CreateYourAccount createYourAccount = new CreateYourAccount(Driver);
+            ProfilePage profilePage = new ProfilePage(Driver);
+            JsonConverter jsonConverter = new JsonConverter();
+            UserFromJson user = jsonConverter.GetUser();
+            SignInPage signInPage = new SignInPage(Driver);
+            ProductDetailsPage productDetails = new ProductDetailsPage(Driver);
+
+            NavigateToSignInPage();
+
+            signInPage
+                .FillInSignInForm(user)
+                .ClickSignInButton();
+            homePage
+                .ClickMenuButton()
+                .ClickAndHoldFirstCategory()
+                .ClickFirstSubCategory()
+                .ClickInches75TVCategory()
+                .ClickFirstProductInGrid();
+            productDetails
+                .ClickAddToCartButton();
+
+            Assert.True(productDetails.GetTitleSuccessfulAddedProductPopUp().Contains("  You just added 1 item "), "Product successfuly added to cart");
+
+            productDetails
+               .ClickViewCartButton();
         }
     }
 }

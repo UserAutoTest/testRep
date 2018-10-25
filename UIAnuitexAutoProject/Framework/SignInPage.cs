@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using UIAnuitexAutoProject.Framework.Models;
 
 namespace UIAnuitexAutoProject.Framework
@@ -16,7 +17,7 @@ namespace UIAnuitexAutoProject.Framework
 
         public IWebElement PasswordInput => _driver.FindElement(By.XPath(".//input[@data-tl-id='signin-password-input']"));
 
-        public IWebElement SignInButton => _driver.FindElement(By.XPath(".//button[@data-tl-id='signin-submit-btn']"));
+        public IWebElement SignInButton => _driver.FindElement(By.XPath(".//button[@data-automation-id='signin-submit-btn']"));
         
         public SignInPage FillInEmailAddressInput(UserFromJson user)
         {
@@ -26,7 +27,14 @@ namespace UIAnuitexAutoProject.Framework
 
         public SignInPage FillInPasswordInput(UserFromJson user)
         {
-            EmailAddressInput.SendKeys(user.Password);
+            PasswordInput.SendKeys(user.Password);
+            return this;
+        }
+
+        public SignInPage FillInSignInForm(UserFromJson user)
+        {
+            EmailAddressInput.SendKeys(user.Login);
+            PasswordInput.SendKeys(user.Password);
             return this;
         }
 

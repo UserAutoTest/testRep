@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace UIAnuitexAutoProject.Framework.HomePage
@@ -35,7 +36,7 @@ namespace UIAnuitexAutoProject.Framework.HomePage
         {
             AccountIcon.Click();
             return new AllProductInCategoryPage(_driver);
-        }
+        }               
 
         public AllProductInCategoryPage ClickInches75TVCategory()
         {
@@ -45,19 +46,23 @@ namespace UIAnuitexAutoProject.Framework.HomePage
 
         public HomePage ClickMenuButton()
         {
+            Thread.Sleep(50);
             MenuButton.Click();
             return this;
         }
 
         public HomePage ClickAndHoldFirstCategory()
         {
+            
+            _driver.WaitForElementToBeVisible(By.XPath(".//div[@data-tl-id='GlobalHeaderDepartmentsMenu-flyout'][2]"));
             Actions action = new Actions(_driver);
-            action.DoubleClick(FirstCategory).Perform();
+            action.MoveToElement(FirstCategory).Perform();
             return this;
         }
 
         public HomePage ClickFirstSubCategory()
         {
+            _driver.WaitForElementToBeVisible(By.XPath(".//a[@data-uid='LHN-1-DEPT-2']"));
             FirstSubCategory.Click();
             return this;
         }

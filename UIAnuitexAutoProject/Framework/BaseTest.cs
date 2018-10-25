@@ -50,6 +50,11 @@ namespace UIAnuitexAutoProject
         {
             _driver.Quit();
         }
+
+        public void NavigateToSignInPage()
+        {
+            Driver.Navigate().GoToUrl("https://www.walmart.com/account/login?ref=domain");
+        }
     }
 }
 
