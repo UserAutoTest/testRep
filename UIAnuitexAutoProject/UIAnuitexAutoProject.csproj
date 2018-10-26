@@ -47,6 +47,7 @@
     <Compile Include="Framework\AllProductInCategoryPage.cs" />
     <Compile Include="Framework\BaseApi.cs" />
     <Compile Include="Framework\BaseTest.cs" />
+    <Compile Include="Framework\CartPage.cs" />
     <Compile Include="Framework\CheckOutPage.cs" />
     <Compile Include="Framework\CreateYourAccount.cs" />
     <Compile Include="Framework\Extensions.cs" />

@@ -10,20 +10,20 @@ namespace UIAnuitexAutoProject.Framework
 {
     public class BaseApi
     {
+        public IList<RestResponseCookie> _allResponseCookie;
+
         public void DoPost(string path, string urlSegment = null, object myBodyModel = null, HttpStatusCode code = HttpStatusCode.OK)
         {
-          //  CookieContainer _cookieJar = new CookieContainer();
-
-            var client = new RestClient(path);
             
-            //client.CookieContainer = _cookieJar;
+            var client = new RestClient(path);
 
             var request = new RestRequest($"{path}{urlSegment}", Method.POST);
             request.RequestFormat = DataFormat.Json;
             var str = "reflectorid:0000000000000000000000@lastupd:1540450519208@firstcreate:1540450518129";
 
             request.AddParameter("Content-Type", "application/json; charset=utf-8");
-            request.AddParameter("ref","domain");           
+            request.AddParameter("ref", "domain");
+            #region
             request.AddCookie("AID", "wmlspartner%3D0%3Areflectorid%3D0000000000000000000000%3Alastupd%3D1540450519208");
             request.AddCookie("DL", "94066%2C%2C%2Cip%2C94066%2C%2C");
             request.AddCookie("TS011baee6", "01c5a4e2f95454be1f8af79dd466f8e1d7d7ff1238cfd75f60604867b9f9592be8f1ec6c006e70a39d51e40113719373ad9bd376fc");
@@ -53,13 +53,14 @@ namespace UIAnuitexAutoProject.Framework
             request.AddCookie("x-csrf-jwt", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiY29va2llIiwidXVpZCI6IjAzNTM4M2UwLWQ4MjMtMTFlOC1iNGQ4LWIxOTY2Y2ZkMDYzOCIsImlhdCI6MTU0MDQ1MDU1MiwiZXhwIjoxNTQyMjUwNTUyfQ.ei61iVE_GJ18Cpgf3xb59s0c0MEJvh76QbG8ma2IW1g");
             request.AddCookie("xpa", "JUZP9|MKaIf|OjCW-|SQMO1|TkA-P|XfPOH|bOXs5|h8bVz|lFNaS|o8b21|p5xk4|rtPI4|wjqkF");
             request.AddCookie("xpm", "1%2B1540450590%2BdB-sjxZ_lJY-F7iXZ_iW3U~%2B0");
+            #endregion
 
-            request.AddBody(myBodyModel);  
-                      
+            request.AddBody(myBodyModel);
+
             IRestResponse response = client.Execute(request);
 
             var content = response.Content;
+            _allResponseCookie = response.Cookies;
         }
-
     }
 }

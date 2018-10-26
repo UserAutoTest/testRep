@@ -35,7 +35,6 @@ namespace UIAnuitexAutoProject.TestAPI
             string pass = signUpModel.email;
 
             DoPost("https://www.walmart.com/", "account/electrode/api/signup?ref=domain", signUpModel);
-
         }
     }
 }

@@ -74,25 +74,34 @@ namespace UIAnuitexAutoProject.Test
             UserFromJson user = jsonConverter.GetUser();
             SignInPage signInPage = new SignInPage(Driver);
             ProductDetailsPage productDetails = new ProductDetailsPage(Driver);
+            AllProductInCategoryPage allProductInCategory = new AllProductInCategoryPage(Driver);
+            CartPage cartPage = new CartPage(Driver);
 
-            NavigateToSignInPage();
+            //NavigateToSignInPage();
 
-            signInPage
-                .FillInSignInForm(user)
-                .ClickSignInButton();
+            //signInPage
+            //    .FillInSignInForm(user)
+            //    .ClickSignInButton();
             homePage
                 .ClickMenuButton()
                 .ClickAndHoldFirstCategory()
                 .ClickFirstSubCategory()
-                .ClickInches75TVCategory()
-                .ClickFirstProductInGrid();
-            productDetails
-                .ClickAddToCartButton();
+                .ClickInches75TVCategory();
 
-            Assert.True(productDetails.GetTitleSuccessfulAddedProductPopUp().Contains("  You just added 1 item "), "Product successfuly added to cart");
+            string profuctTitle = allProductInCategory.GetProductTitle();
+            string profuctPrice = allProductInCategory.GetProductPrice();
 
+            allProductInCategory
+               .ClickFirstProductInGrid();
             productDetails
-               .ClickViewCartButton();
+                .ClickAddToCartButton()
+                .ClickViewCartButton();
+
+            //string cartProfuctTitle = cartPage.GetProdTitle();
+            //string cartProfuctPrice = cartPage.GetCartProductPrice();
+
+            //Assert.AreEqual(profuctTitle, cartProfuctTitle, "Title are equel");
+            //Assert.AreEqual(profuctPrice, cartProfuctPrice, "Price are equel");
         }
     }
 }

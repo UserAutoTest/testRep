@@ -11,15 +11,20 @@ namespace UIAnuitexAutoProject.Framework
     {
         public CreateYourAccount(IWebDriver driver) : base(driver) { }
 
-        public IWebElement FirstNameField => _driver.FindElement(By.XPath(".//input[@name='firstName']"));
+        public IWebElement FirstNameField => _driver.FindElement(
+            By.XPath(".//input[@name='firstName']"));
 
-        public IWebElement LastNameField => _driver.FindElement(By.XPath(".//input[@name='lastName']"));
+        public IWebElement LastNameField => _driver.FindElement(
+            By.XPath(".//input[@name='lastName']"));
 
-        public IWebElement EmailAddressField => _driver.FindElement(By.XPath(".//input[@name='email']"));
+        public IWebElement EmailAddressField => _driver.FindElement(
+            By.XPath(".//input[@data-tl-id='signup-email-input']"));
 
-        public IWebElement CreateAPasswordField => _driver.FindElement(By.XPath(".//input[@name='password']"));
+        public IWebElement CreateAPasswordField => _driver.FindElement(
+            By.XPath(".//input[@id='password-su']"));
 
-        public IWebElement CreateAccountButton => _driver.FindElement(By.XPath(".//button[@type='submit']"));
+        public IWebElement CreateAccountButton => _driver.FindElement(
+            By.XPath(".//button[@data-automation-id='signup-submit-btn']"));
 
 
         public CreateYourAccount FillInFirstNameField(string firstName)
@@ -34,15 +39,15 @@ namespace UIAnuitexAutoProject.Framework
             return this;
         }
 
-        public CreateYourAccount FillInEmailAddress(string phoneField)
+        public CreateYourAccount FillInEmailAddress(string emailField)
         {
-            EmailAddressField.SendKeys(phoneField);
+            EmailAddressField.SendKeys(emailField);
             return this;
         }
 
-        public CreateYourAccount FillInCreateAPassword(string emailField)
+        public CreateYourAccount FillInCreateAPassword(string password)
         {
-            CreateAPasswordField.SendKeys(emailField);
+            CreateAPasswordField.SendKeys(password);
             return this;
         }
 

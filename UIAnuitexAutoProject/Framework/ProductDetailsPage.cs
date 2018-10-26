@@ -15,7 +15,7 @@ namespace UIAnuitexAutoProject.Framework
             By.XPath(".//span[@class='spin-button-children']"));
 
         public IWebElement SuccessfulAddedProductPopUp => _driver.FindElement(
-            By.XPath("//span[@class='heading-success']/span"));
+            By.XPath(".//h3[@class='Cart-PACModal-Heading']/span/span[1]"));
 
         public IWebElement ViewCartButton => _driver.FindElement(
             By.XPath(".//button[@data-automation-id='pac-pos-view-cart']"));

@@ -10,20 +10,20 @@ using System.Threading.Tasks;
 namespace UIAnuitexAutoProject.Framework.HomePage
 {
     public class HomePage : PageObject
-    {
-        public HomePage(IWebDriver driver) : base(driver) { }
+    {    
+        public HomePage(IWebDriver driver) : base(driver) { }        
 
         public IWebElement AccountIcon => _driver.FindElement(
             By.XPath(".//span[@alt='Icon for User Nav']"));
 
         public IWebElement MenuButton => _driver.FindElement(
-            By.XPath(".//button[@aria-label='Menu']"));
+            By.XPath(".//span[@class='elc-icon elc-icon-menu']"));
 
         public IWebElement FirstCategory => _driver.FindElement(
-            By.XPath(".//div[@data-tl-id='GlobalHeaderDepartmentsMenu-flyout'][2]"));
+            By.XPath(".//button[@aria-label='Electronics & Office']"));
 
         public IWebElement FirstSubCategory => _driver.FindElement(
-            By.XPath(".//a[@data-uid='LHN-1-DEPT-2']"));
+            By.XPath(".//a[contains(text(),'TV & Video')]"));
 
         public IWebElement Inches75TVCategory => _driver.FindElement(
             By.XPath(".//a[@aria-label='75 Inch TVs & Up']"));
@@ -54,7 +54,7 @@ namespace UIAnuitexAutoProject.Framework.HomePage
         public HomePage ClickAndHoldFirstCategory()
         {
             
-            _driver.WaitForElementToBeVisible(By.XPath(".//div[@data-tl-id='GlobalHeaderDepartmentsMenu-flyout'][2]"));
+            //_driver.WaitForElementToBeVisible(By.XPath(".//div[@data-tl-id='GlobalHeaderDepartmentsMenu-flyout'][2]"));
             Actions action = new Actions(_driver);
             action.MoveToElement(FirstCategory).Perform();
             return this;
@@ -62,7 +62,7 @@ namespace UIAnuitexAutoProject.Framework.HomePage
 
         public HomePage ClickFirstSubCategory()
         {
-            _driver.WaitForElementToBeVisible(By.XPath(".//a[@data-uid='LHN-1-DEPT-2']"));
+            Thread.Sleep(100);
             FirstSubCategory.Click();
             return this;
         }

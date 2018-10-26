@@ -13,17 +13,17 @@ namespace UIAnuitexAutoProject.Framework
     {
         public static string path = @"C:\Users\Anuitex\jsonNewFile.json";
 
-        private List<UserFromJson> alluserlist;
+        private List<UserFromJson> _alluserlist;
         public List<UserFromJson> AllUserList
         {
             get
             {
-                if (alluserlist == null)
+                if (_alluserlist == null)
                 {
                     string json = File.ReadAllText(path);
-                    alluserlist = JsonConvert.DeserializeObject<List<UserFromJson>>(json);
+                    _alluserlist = JsonConvert.DeserializeObject<List<UserFromJson>>(json);
                 }
-                return alluserlist;
+                return _alluserlist;
             }
         }
 
