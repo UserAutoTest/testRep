@@ -53,6 +53,7 @@
     <Compile Include="Framework\Extensions.cs" />
     <Compile Include="Framework\FulFllmentCheckOut.cs" />
     <Compile Include="Framework\Helper.cs" />
+    <Compile Include="Framework\Helpers\CookieHelper.cs" />
     <Compile Include="Framework\HomePage\HomePage.cs" />
     <Compile Include="Framework\JsonConverter.cs" />
     <Compile Include="Framework\Models\ApiModels\RequestModels\Captcha.cs" />

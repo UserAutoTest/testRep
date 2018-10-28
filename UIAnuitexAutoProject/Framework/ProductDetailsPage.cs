@@ -38,6 +38,7 @@ namespace UIAnuitexAutoProject.Framework
 
         public ProductDetailsPage ClickViewCartButton()
         {
+            _driver.WaitForElementToBeVisible(By.XPath(".//button[@data-automation-id='pac-pos-view-cart']"));
             ViewCartButton.Click();
             return this;
         }

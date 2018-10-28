@@ -98,10 +98,10 @@ namespace UIAnuitexAutoProject.Test
                 .ClickViewCartButton();
 
             //string cartProfuctTitle = cartPage.GetProdTitle();
-            //string cartProfuctPrice = cartPage.GetCartProductPrice();
+            string cartProfuctPrice = cartPage.GetCartProductPrice();
 
-            //Assert.AreEqual(profuctTitle, cartProfuctTitle, "Title are equel");
-            //Assert.AreEqual(profuctPrice, cartProfuctPrice, "Price are equel");
+            //Assert.AreEqual(profuctTitle, cartProfuctTitle, "Title are equal");
+            Assert.AreEqual(profuctPrice, cartProfuctPrice, "Price are equal");
         }
     }
 }
