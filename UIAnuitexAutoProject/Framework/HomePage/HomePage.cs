@@ -51,18 +51,25 @@ namespace UIAnuitexAutoProject.Framework.HomePage
             return this;
         }
 
-        public HomePage ClickAndHoldFirstCategory()
+        
+        public HomePage DoublClickOrHoverFirstCategory()
         {
             
             //_driver.WaitForElementToBeVisible(By.XPath(".//div[@data-tl-id='GlobalHeaderDepartmentsMenu-flyout'][2]"));
             Actions action = new Actions(_driver);
-            action.MoveToElement(FirstCategory).Perform();
+            action.MoveToElement(FirstCategory).Perform();          
             return this;
+
         }
 
         public HomePage ClickFirstSubCategory()
         {
-            Thread.Sleep(100);
+            var element = _driver.IsElementPresent(By.XPath(".//a[contains(text(),'TV & Video')]"));
+            if (element == false)
+            {
+                Actions action = new Actions(_driver);
+                action.DoubleClick(FirstCategory).Perform();
+            }
             FirstSubCategory.Click();
             return this;
         }

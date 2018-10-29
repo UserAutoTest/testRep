@@ -21,6 +21,13 @@ namespace UIAnuitexAutoProject.Framework
         public IWebElement CartProductPrice => _driver.FindElement(
             By.XPath(".//div[@class='Price font-bold']/div/span"));
 
+        public IWebElement RemoveProducrButton => _driver.FindElement(
+            By.XPath(".//button[@data-tl-id='CartRemoveLnk']/span/span[1]"));
+
+        public IWebElement CartTitle => _driver.FindElement(
+            By.XPath(".//h1[@data-automation-id='cart-list-title']/span/span"));
+
+
 
         public string GetProdTitle()
         {
@@ -32,6 +39,17 @@ namespace UIAnuitexAutoProject.Framework
         {
             _prodPrice = CartProductPrice.Text;
             return _prodPrice;
+        }
+
+        public void ClickRemoveButton()
+        {
+            RemoveProducrButton.Click();
+        }
+
+        public string GetCartTitle()
+        {
+            string title = CartTitle.Text;
+            return title;
         }
     }
 }

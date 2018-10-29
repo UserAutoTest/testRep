@@ -12,9 +12,9 @@ namespace UIAnuitexAutoProject.TestAPI
     public class SignUpApiTest : BaseApi
     {
         [Test]
-        public void LoginApiTest()
+        public void CreateNewUserApiTest()
         {
-            SignUpModel signUpModel = new SignUpModel
+            SignUpModel signUpModel = new SignUpModel 
             {
                 captcha = new Captcha
                 {

@@ -67,28 +67,17 @@ namespace UIAnuitexAutoProject.Test
         public void AddProductInCartUnloggedUser()
         {
             HomePage homePage = new HomePage(Driver);
-            RightNavMenu rightNavMenu = new RightNavMenu(Driver);
-            CreateYourAccount createYourAccount = new CreateYourAccount(Driver);
-            ProfilePage profilePage = new ProfilePage(Driver);
-            JsonConverter jsonConverter = new JsonConverter();
-            UserFromJson user = jsonConverter.GetUser();
-            SignInPage signInPage = new SignInPage(Driver);
+            RightNavMenu rightNavMenu = new RightNavMenu(Driver); 
             ProductDetailsPage productDetails = new ProductDetailsPage(Driver);
             AllProductInCategoryPage allProductInCategory = new AllProductInCategoryPage(Driver);
             CartPage cartPage = new CartPage(Driver);
-
-            //NavigateToSignInPage();
-
-            //signInPage
-            //    .FillInSignInForm(user)
-            //    .ClickSignInButton();
+                       
             homePage
                 .ClickMenuButton()
-                .ClickAndHoldFirstCategory()
+                .DoublClickOrHoverFirstCategory()
                 .ClickFirstSubCategory()
                 .ClickInches75TVCategory();
 
-            string profuctTitle = allProductInCategory.GetProductTitle();
             string profuctPrice = allProductInCategory.GetProductPrice();
 
             allProductInCategory
@@ -97,11 +86,35 @@ namespace UIAnuitexAutoProject.Test
                 .ClickAddToCartButton()
                 .ClickViewCartButton();
 
-            //string cartProfuctTitle = cartPage.GetProdTitle();
             string cartProfuctPrice = cartPage.GetCartProductPrice();
+            
+            Assert.AreEqual(profuctPrice, cartProfuctPrice, "product add to cart and Price are equal");
+        }
 
-            //Assert.AreEqual(profuctTitle, cartProfuctTitle, "Title are equal");
-            Assert.AreEqual(profuctPrice, cartProfuctPrice, "Price are equal");
+        [Test]
+        public void AddAndRemoveProductFromCart()
+        {
+            HomePage homePage = new HomePage(Driver);
+            RightNavMenu rightNavMenu = new RightNavMenu(Driver);
+            ProductDetailsPage productDetails = new ProductDetailsPage(Driver);
+            AllProductInCategoryPage allProductInCategory = new AllProductInCategoryPage(Driver);
+            CartPage cartPage = new CartPage(Driver);
+
+            homePage
+                .ClickMenuButton()
+                .DoublClickOrHoverFirstCategory()
+                .ClickFirstSubCategory()
+                .ClickInches75TVCategory();
+            allProductInCategory
+               .ClickFirstProductInGrid();
+            productDetails
+                .ClickAddToCartButton()
+                .ClickViewCartButton();
+            cartPage
+                .ClickRemoveButton();
+
+
+            Assert.IsTrue(cartPage.GetCartTitle().Contains("0 items in your cart"), "Title isn't null");
         }
     }
 }

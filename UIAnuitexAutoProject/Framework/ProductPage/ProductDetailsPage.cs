@@ -12,7 +12,7 @@ namespace UIAnuitexAutoProject.Framework
         public ProductDetailsPage(IWebDriver driver) : base(driver) { }
 
         public IWebElement AddToCardButton => _driver.FindElement(
-            By.XPath(".//span[@class='spin-button-children']"));
+            By.XPath(".//span[contains(text(),'Add to Cart')]"));
 
         public IWebElement SuccessfulAddedProductPopUp => _driver.FindElement(
             By.XPath(".//h3[@class='Cart-PACModal-Heading']/span/span[1]"));
@@ -25,6 +25,7 @@ namespace UIAnuitexAutoProject.Framework
 
         public ProductDetailsPage ClickAddToCartButton()
         {
+            _driver.WaitForElementToBeVisible(By.XPath(".//span[contains(text(),'Add to Cart')]"));
             AddToCardButton.Click();
             return this;
         }

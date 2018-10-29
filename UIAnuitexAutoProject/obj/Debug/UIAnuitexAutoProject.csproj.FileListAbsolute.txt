@@ -50,7 +50,6 @@ C:\Users\Anuitex\source\repos\testRep\UIAnuitexAutoProject\bin\Debug\nunit.frame
 C:\Users\Anuitex\source\repos\testRep\UIAnuitexAutoProject\bin\Debug\nunit.framework.xml
 C:\Users\Anuitex\source\repos\testRep\UIAnuitexAutoProject\bin\Debug\RestSharp.xml
 C:\Users\Anuitex\source\repos\testRep\UIAnuitexAutoProject\bin\Debug\WebDriver.xml
-C:\Users\Anuitex\source\repos\testRep\UIAnuitexAutoProject\obj\Debug\UIAnuitexAutoProject.csprojAssemblyReference.cache
 C:\Users\Anuitex\source\repos\testRep\UIAnuitexAutoProject\obj\Debug\UIAnuitexAutoProject.csproj.CoreCompileInputs.cache
 C:\Users\Anuitex\source\repos\testRep\UIAnuitexAutoProject\obj\Debug\UIAnuitexAutoProject.csproj.CopyComplete
 C:\Users\Anuitex\source\repos\testRep\UIAnuitexAutoProject\obj\Debug\UIAnuitexAutoProject.dll
