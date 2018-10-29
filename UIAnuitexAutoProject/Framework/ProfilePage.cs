@@ -25,6 +25,7 @@ namespace UIAnuitexAutoProject.Framework
 
         public ProfilePage ClickProfilePasswordMenuItem()
         {
+            _driver.WaitForElementToBeVisible(By.XPath(".//a[contains(text(),'Profile & Password')]"));
             ProfilePasswordMenuItem.Click();
             return this;
         }

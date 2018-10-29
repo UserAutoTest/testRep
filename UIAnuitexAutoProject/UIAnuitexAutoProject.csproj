@@ -65,6 +65,7 @@
     <Compile Include="Framework\RightNavMenu.cs" />
     <Compile Include="Framework\ProfilePage.cs" />
     <Compile Include="Framework\SignInPage.cs" />
+    <Compile Include="Framework\SignInUserNavMenu.cs" />
     <Compile Include="TestAPI\SignUpApiTest.cs" />
     <Compile Include="Test\CreateEditAccount.cs" />
   </ItemGroup>

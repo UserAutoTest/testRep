@@ -54,8 +54,6 @@ namespace UIAnuitexAutoProject.Framework.HomePage
         
         public HomePage DoublClickOrHoverFirstCategory()
         {
-            
-            //_driver.WaitForElementToBeVisible(By.XPath(".//div[@data-tl-id='GlobalHeaderDepartmentsMenu-flyout'][2]"));
             Actions action = new Actions(_driver);
             action.MoveToElement(FirstCategory).Perform();          
             return this;

@@ -43,11 +43,13 @@ namespace UIAnuitexAutoProject.Framework
 
         public void ClickRemoveButton()
         {
+            _driver.WaitForElementToBeVisible(By.XPath(".//button[@data-tl-id='CartRemoveLnk']/span/span[1]"));
             RemoveProducrButton.Click();
         }
 
         public string GetCartTitle()
         {
+            _driver.WaitForElementToBeVisible(By.XPath(".//h1[@aria-label='0 items in your cart 0 items']"));
             string title = CartTitle.Text;
             return title;
         }
