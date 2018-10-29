@@ -14,8 +14,7 @@ namespace UIAnuitexAutoProject.Framework
     {
         public static  IList<RestResponseCookie> _allResponseCookie;
 
-        public void DoPost(string path, string urlSegment = null, object myBodyModel = null,
-            HttpStatusCode code = HttpStatusCode.OK)
+        public void DoPost(string path, string urlSegment = null, object myBodyModel = null, HttpStatusCode code = HttpStatusCode.OK)
         {
             
             var client = new RestClient(path);
@@ -26,6 +25,7 @@ namespace UIAnuitexAutoProject.Framework
             CookieHelper.AddDefaultCookies(request);
 
             request.AddParameter("Content-Type", "application/json; charset=utf-8");
+
             request.AddParameter("ref", "domain");
 
             request.AddBody(myBodyModel);

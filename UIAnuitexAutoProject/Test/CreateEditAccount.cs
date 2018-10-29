@@ -64,7 +64,7 @@ namespace UIAnuitexAutoProject.Test
             }
 
         [Test]
-        public void AddProductInCartLoggedInUser()
+        public void AddProductInCartUnloggedUser()
         {
             HomePage homePage = new HomePage(Driver);
             RightNavMenu rightNavMenu = new RightNavMenu(Driver);

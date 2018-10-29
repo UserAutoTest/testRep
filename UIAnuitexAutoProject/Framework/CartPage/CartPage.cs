@@ -19,7 +19,7 @@ namespace UIAnuitexAutoProject.Framework
             By.XPath(".//div[@class='cart-item-name js-product-title']/a"));
 
         public IWebElement CartProductPrice => _driver.FindElement(
-            By.XPath(""));
+            By.XPath(".//div[@class='Price font-bold']/div/span"));
 
 
         public string GetProdTitle()

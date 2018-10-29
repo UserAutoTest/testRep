@@ -44,14 +44,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Framework\AllProductInCategoryPage.cs" />
+    <Compile Include="Framework\ProductPage\AllProductInCategoryPage.cs" />
     <Compile Include="Framework\BaseApi.cs" />
     <Compile Include="Framework\BaseTest.cs" />
-    <Compile Include="Framework\CartPage.cs" />
-    <Compile Include="Framework\CheckOutPage.cs" />
-    <Compile Include="Framework\CreateYourAccount.cs" />
+    <Compile Include="Framework\CartPage\CartPage.cs" />
+    <Compile Include="Framework\CheckOut\CheckOutPage.cs" />
+    <Compile Include="Framework\CreateAccount\CreateYourAccount.cs" />
     <Compile Include="Framework\Extensions.cs" />
-    <Compile Include="Framework\FulFllmentCheckOut.cs" />
+    <Compile Include="Framework\CheckOut\FulFillmentCheckOut.cs" />
     <Compile Include="Framework\Helper.cs" />
     <Compile Include="Framework\Helpers\CookieHelper.cs" />
     <Compile Include="Framework\HomePage\HomePage.cs" />
@@ -61,7 +61,7 @@
     <Compile Include="Framework\Models\ApiModels\RequestModels\SignUpModel.cs" />
     <Compile Include="Framework\Models\UserFromJsoncs.cs" />
     <Compile Include="Framework\PageObject.cs" />
-    <Compile Include="Framework\ProductDetailsPage.cs" />
+    <Compile Include="Framework\ProductPage\ProductDetailsPage.cs" />
     <Compile Include="Framework\RightNavMenu.cs" />
     <Compile Include="Framework\ProfilePage.cs" />
     <Compile Include="Framework\SignInPage.cs" />

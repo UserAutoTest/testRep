@@ -11,7 +11,7 @@ namespace UIAnuitexAutoProject.Framework
 {
     public class JsonConverter
     {
-        public static string path = @"C:\Users\Оля\jsonNewFile.json";
+        public static string path = @"C:\Users\Anuitex\jsonNewFile.json";
 
         private List<UserFromJson> _alluserlist;
         public List<UserFromJson> AllUserList

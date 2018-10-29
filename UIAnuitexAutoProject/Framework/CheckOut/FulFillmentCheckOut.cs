@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace UIAnuitexAutoProject.Framework
 {
-    public class FulFllmentCheckOut : PageObject
+    public class FulFillmentCheckOut : PageObject
     {
-        public FulFllmentCheckOut(IWebDriver driver) : base(driver) { }
+        public FulFillmentCheckOut(IWebDriver driver) : base(driver) { }
 
         public IWebElement ContinueButton => _driver.FindElement(By.XPath(".//button[@data-tl-id='COAC1FulContBtn']"));
 
@@ -34,61 +34,61 @@ namespace UIAnuitexAutoProject.Framework
         public IWebElement UseAddressProvidedButton => _driver.FindElement(By.XPath(".//button[@data-tl-id='COAC2ShpAddrSaveAddrBtn']"));
 
 
-        public FulFllmentCheckOut ClickContinueButton()
+        public FulFillmentCheckOut ClickContinueButton()
         {
             ContinueButton.Click();
             return this;
         }
 
-        public FulFllmentCheckOut WriteFirstNameField(string firstName)
+        public FulFillmentCheckOut WriteFirstNameField(string firstName)
         {
             FirstNameField.SendKeys(firstName);
             return this;
         }
 
-        public FulFllmentCheckOut WriteLastNameField(string lastName)
+        public FulFillmentCheckOut WriteLastNameField(string lastName)
         {
             LastNameField.SendKeys(lastName);
             return this;
         }
 
-        public FulFllmentCheckOut WritePhoneField(string phoneField)
+        public FulFillmentCheckOut WritePhoneField(string phoneField)
         {
             PhoneField.SendKeys(phoneField);
             return this;
         }
 
-        public FulFllmentCheckOut WriteEmailField(string emailField)
+        public FulFillmentCheckOut WriteEmailField(string emailField)
         {
             EmailField.SendKeys(emailField);
             return this;
         }
 
-        public FulFllmentCheckOut WriteAddressField(string addressField)
+        public FulFillmentCheckOut WriteAddressField(string addressField)
         {
             AddressField.SendKeys(addressField);
             return this;
         }
 
-        public FulFllmentCheckOut WriteCityField(string cityField)
+        public FulFillmentCheckOut WriteCityField(string cityField)
         {
             CityField.SendKeys(cityField);
             return this;
         }
 
-        public FulFllmentCheckOut WritePostalCodeField(string postalCodeField)
+        public FulFillmentCheckOut WritePostalCodeField(string postalCodeField)
         {
             PostalCodeField.SendKeys(postalCodeField);
             return this;
         }
 
-        public FulFllmentCheckOut ClickContinueButtonAfterShipingAddress()
+        public FulFillmentCheckOut ClickContinueButtonAfterShipingAddress()
         {
             ContinueButtonAfterShipingAddress.Click();
             return this;
         }
 
-        public FulFllmentCheckOut ClickUseAddressProvidedButton()
+        public FulFillmentCheckOut ClickUseAddressProvidedButton()
         {
             UseAddressProvidedButton.Click();
             return this;
