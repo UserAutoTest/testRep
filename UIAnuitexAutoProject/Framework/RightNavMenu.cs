@@ -25,7 +25,7 @@ namespace UIAnuitexAutoProject.Framework
 
         public RightNavMenu ClickSignInLink()
         {
-            Thread.Sleep(100);
+            _driver.WaitForElementToBeVisible(By.XPath(".//div[contains(text(), 'Sign In')]"));
             SignInLink.Click();
             return this;
         }

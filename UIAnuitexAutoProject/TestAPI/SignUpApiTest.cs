@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UIAnuitexAutoProject.Framework;
+using UIAnuitexAutoProject.Framework.Models;
 using UIAnuitexAutoProject.Framework.Models.ApiModels.RequestModels;
 
 namespace UIAnuitexAutoProject.TestAPI
@@ -14,7 +15,9 @@ namespace UIAnuitexAutoProject.TestAPI
         [Test]
         public void CreateNewUserApiTest()
         {
-            SignUpModel signUpModel = new SignUpModel 
+            JsonConverter jsonConverter = new JsonConverter();
+
+            SignUpModel signUpModel = new SignUpModel
             {
                 captcha = new Captcha
                 {
@@ -25,14 +28,12 @@ namespace UIAnuitexAutoProject.TestAPI
                     firstName = $"F{DateTime.Now.ToString("mmddhhmmss")}",
                     lastName = $"L{DateTime.Now.ToString("mmddhhmmss")}"
                 },
-               email = $"test{DateTime.Now.ToString("mmddhhmmss")}@gmail.com",
-               password = "12345678",
-               rememberme = true,
-               showRememberme = true,
-               emailNotificationAccepted = true
-            };
-
-            string pass = signUpModel.email;
+                email = $"test{DateTime.Now.ToString("mmddhhmmss")}@gmail.com",
+                password = "12345678",
+                rememberme = true,
+                showRememberme = true,
+                emailNotificationAccepted = true
+            };                        
 
             DoPost("https://www.walmart.com/", "account/electrode/api/signup?ref=domain", signUpModel);
         }

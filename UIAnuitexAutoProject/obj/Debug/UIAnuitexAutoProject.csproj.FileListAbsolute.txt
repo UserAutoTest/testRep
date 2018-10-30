@@ -54,4 +54,3 @@ C:\Users\Anuitex\source\repos\testRep\UIAnuitexAutoProject\obj\Debug\UIAnuitexAu
 C:\Users\Anuitex\source\repos\testRep\UIAnuitexAutoProject\obj\Debug\UIAnuitexAutoProject.csproj.CopyComplete
 C:\Users\Anuitex\source\repos\testRep\UIAnuitexAutoProject\obj\Debug\UIAnuitexAutoProject.dll
 C:\Users\Anuitex\source\repos\testRep\UIAnuitexAutoProject\obj\Debug\UIAnuitexAutoProject.pdb
-C:\Users\Anuitex\source\repos\testRep\UIAnuitexAutoProject\obj\Debug\UIAnuitexAutoProject.csprojAssemblyReference.cache

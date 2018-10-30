@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using UIAnuitexAutoProject.Framework;
 using UIAnuitexAutoProject.Framework.HomePage;
@@ -39,15 +40,21 @@ namespace UIAnuitexAutoProject.Test
 
 
         [Test]
-        public void EditAccount()
+        public void EditProfileFullName()
         {
             HomePage homePage = new HomePage(Driver);            
             RightNavMenu rightNavMenu = new RightNavMenu(Driver);
             CreateYourAccount createYourAccount = new CreateYourAccount(Driver);
             ProfilePage profilePage = new ProfilePage(Driver);
             JsonConverter jsonConverter = new JsonConverter();
-            UserFromJson user = jsonConverter.GetUser();            
+            UserFromJson user = jsonConverter.GetUser();
+            JsonConverter json = new JsonConverter();
             SignInPage signInPage = new SignInPage(Driver);
+            SignInUserNavMenu signInUserNavMenu = new SignInUserNavMenu(Driver);
+
+
+            var fName = $"FN{DateTime.Now.ToString("yyyyMMddHHmmss")}";
+            var lName = $"LN{DateTime.Now.ToString("yyyyMMddHHmmss")}";
 
             homePage
                 .ClickAccountIcon();
@@ -58,9 +65,19 @@ namespace UIAnuitexAutoProject.Test
                 .FillInPasswordInput(user)
                 .ClickSignInButton();
             profilePage
-                .ClickAccountIconForSignInUser();
+                .ClickAccountIconForSignInUser()
+                .ClickAccountLink()
+                .ClickProfilePasswordMenuItem()
+                .EditFullNameAndSave(fName, lName);
+                
 
-            Assert.AreEqual("TN", homePage.GetAcountIconValue(), "User is creadet successfuly");
+            //string pass = profilePage.GetUserPassByLogin().Password;
+
+            //profilePage
+            //    .TypeConfirmationPasswordInPopUp(pass)
+            //    .ClickContinueButton();
+
+            Assert.AreEqual($"{fName} {lName}", profilePage.GetFullName(), "User Name is changed");
             }
 
         [Test]
@@ -71,10 +88,11 @@ namespace UIAnuitexAutoProject.Test
             ProductDetailsPage productDetails = new ProductDetailsPage(Driver);
             AllProductInCategoryPage allProductInCategory = new AllProductInCategoryPage(Driver);
             CartPage cartPage = new CartPage(Driver);
-                       
+
+            //Thread.Sleep(3000);
             homePage
                 .ClickMenuButton()
-                .DoublClickOrHoverFirstCategory()
+                .HoverFirstCategory()
                 .ClickFirstSubCategory()
                 .ClickInches75TVCategory();
 
@@ -100,9 +118,10 @@ namespace UIAnuitexAutoProject.Test
             AllProductInCategoryPage allProductInCategory = new AllProductInCategoryPage(Driver);
             CartPage cartPage = new CartPage(Driver);
 
+            //Thread.Sleep(3000);
             homePage
                 .ClickMenuButton()
-                .DoublClickOrHoverFirstCategory()
+                .HoverFirstCategory()
                 .ClickFirstSubCategory()
                 .ClickInches75TVCategory();
             allProductInCategory

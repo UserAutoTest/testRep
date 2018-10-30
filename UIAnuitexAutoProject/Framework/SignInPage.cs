@@ -21,12 +21,14 @@ namespace UIAnuitexAutoProject.Framework
         
         public SignInPage FillInEmailAddressInput(UserFromJson user)
         {
+            _driver.WaitForElementToBeVisible(By.XPath(".//input[@data-tl-id='signin-email-input']"));
             EmailAddressInput.SendKeys(user.Login);
             return this;
         }
 
         public SignInPage FillInPasswordInput(UserFromJson user)
         {
+            _driver.WaitForElementToBeVisible(By.XPath(".//input[@data-tl-id='signin-password-input']"));
             PasswordInput.SendKeys(user.Password);
             return this;
         }
@@ -40,6 +42,7 @@ namespace UIAnuitexAutoProject.Framework
 
         public SignInPage ClickSignInButton()
         {
+            _driver.WaitForElementToBeVisible(By.XPath(".//button[@data-automation-id='signin-submit-btn']"));
             SignInButton.Click();
             return this;
         }

@@ -46,18 +46,18 @@ namespace UIAnuitexAutoProject.Framework.HomePage
 
         public HomePage ClickMenuButton()
         {
-            Thread.Sleep(50);
+            _driver.WaitForElementToBeVisible(By.XPath(".//span[@class='elc-icon elc-icon-menu']"));
             MenuButton.Click();
             return this;
         }
 
         
-        public HomePage DoublClickOrHoverFirstCategory()
+        public HomePage HoverFirstCategory()
         {
+            _driver.WaitForElementToBeVisible(By.XPath(".//button[@aria-label='Electronics & Office']"));
             Actions action = new Actions(_driver);
             action.MoveToElement(FirstCategory).Perform();          
             return this;
-
         }
 
         public HomePage ClickFirstSubCategory()
@@ -65,8 +65,7 @@ namespace UIAnuitexAutoProject.Framework.HomePage
             var element = _driver.IsElementPresent(By.XPath(".//a[contains(text(),'TV & Video')]"));
             if (element == false)
             {
-                Actions action = new Actions(_driver);
-                action.DoubleClick(FirstCategory).Perform();
+                HoverFirstCategory();
             }
             FirstSubCategory.Click();
             return this;

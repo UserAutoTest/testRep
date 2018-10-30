@@ -37,6 +37,6 @@ namespace UIAnuitexAutoProject.Framework
         {
             UserFromJson currentUserData = AllUserList.FirstOrDefault();
             return currentUserData;
-        }
+        }        
     }
 }

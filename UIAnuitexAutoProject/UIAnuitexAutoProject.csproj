@@ -59,7 +59,7 @@
     <Compile Include="Framework\Models\ApiModels\RequestModels\Captcha.cs" />
     <Compile Include="Framework\Models\ApiModels\RequestModels\PersonNameModel.cs" />
     <Compile Include="Framework\Models\ApiModels\RequestModels\SignUpModel.cs" />
-    <Compile Include="Framework\Models\UserFromJsoncs.cs" />
+    <Compile Include="Framework\Models\UserFromJson.cs" />
     <Compile Include="Framework\PageObject.cs" />
     <Compile Include="Framework\ProductPage\ProductDetailsPage.cs" />
     <Compile Include="Framework\RightNavMenu.cs" />
