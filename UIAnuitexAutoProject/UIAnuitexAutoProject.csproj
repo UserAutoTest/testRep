@@ -44,8 +44,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Framework\API\ApiUrl.cs" />
+    <Compile Include="Framework\API\BaseApi1.cs" />
+    <Compile Include="Framework\Models\ApiModels\ResponseModels\SignUpResponse.cs" />
     <Compile Include="Framework\ProductPage\AllProductInCategoryPage.cs" />
-    <Compile Include="Framework\BaseApi.cs" />
+    <Compile Include="Framework\API\BaseApi.cs" />
     <Compile Include="Framework\BaseTest.cs" />
     <Compile Include="Framework\CartPage\CartPage.cs" />
     <Compile Include="Framework\CheckOut\CheckOutPage.cs" />
@@ -66,6 +69,7 @@
     <Compile Include="Framework\ProfilePage.cs" />
     <Compile Include="Framework\SignInPage.cs" />
     <Compile Include="Framework\SignInUserNavMenu.cs" />
+    <Compile Include="Framework\API\SignUpApi.cs" />
     <Compile Include="TestAPI\SignUpApiTest.cs" />
     <Compile Include="Test\CreateEditAccount.cs" />
   </ItemGroup>
@@ -86,9 +90,7 @@
       <HintPath>..\packages\Selenium.WebDriver.3.14.0\lib\net45\WebDriver.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Framework\Models\ApiModels\ResponseModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
