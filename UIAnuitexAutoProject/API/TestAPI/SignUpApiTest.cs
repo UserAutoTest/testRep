@@ -43,8 +43,7 @@ namespace UIAnuitexAutoProject.TestAPI
             {
                 Assert.AreEqual(signUpModel.personName.firstName, fName, "Check that First Names are equal");
                 Assert.AreEqual(signUpModel.personName.lastName, lName, "Check that Last Names are equal");
-            });
-            
+            });            
         }
     }
 }

@@ -16,7 +16,6 @@ namespace UIAnuitexAutoProject.Test
             JsonConverter jsonConverter = new JsonConverter();
             UserFromJson user = jsonConverter.GetUser();
             SignInPage signInPage = new SignInPage(Driver);
-            SignInUserNavMenu signInUserNavMenu = new SignInUserNavMenu(Driver);
             ProfilePage profilePage = new ProfilePage(Driver);
             StringHelper stringHelper = new StringHelper();
 
@@ -66,15 +65,11 @@ namespace UIAnuitexAutoProject.Test
         public void EditProfileFullName()
         {
             HomePage homePage = new HomePage(Driver);
-            RightNavMenu rightNavMenu = new RightNavMenu(Driver);
-            CreateYourAccount createYourAccount = new CreateYourAccount(Driver);
             ProfilePage profilePage = new ProfilePage(Driver);
             JsonConverter jsonConverter = new JsonConverter();
             UserFromJson user = jsonConverter.GetUser();
-            JsonConverter json = new JsonConverter();
             SignInPage signInPage = new SignInPage(Driver);
-            SignInUserNavMenu signInUserNavMenu = new SignInUserNavMenu(Driver);
-
+            RightNavMenu rightNavMenu = new RightNavMenu(Driver);
 
             var fName = $"FN{DateTime.Now.ToString("yyyyMMddHHmmss")}";
             var lName = $"LN{DateTime.Now.ToString("yyyyMMddHHmmss")}";

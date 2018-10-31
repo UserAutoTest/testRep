@@ -63,13 +63,13 @@
     <Compile Include="Framework\Models\UserFromJson.cs" />
     <Compile Include="Framework\PageObject.cs" />
     <Compile Include="Framework\ProductPage\ProductDetailsPage.cs" />
-    <Compile Include="Framework\RightNavMenu.cs" />
-    <Compile Include="Framework\ProfilePage.cs" />
-    <Compile Include="Framework\SignInPage.cs" />
-    <Compile Include="Framework\SignInUserNavMenu.cs" />
+    <Compile Include="Framework\NavMenu\RightNavMenu.cs" />
+    <Compile Include="Framework\Profile\ProfilePage.cs" />
+    <Compile Include="Framework\SignIn\SignInPage.cs" />
+    <Compile Include="Framework\NavMenu\SignInUserNavMenu.cs" />
     <Compile Include="API\SignUpApi.cs" />
     <Compile Include="API\TestAPI\SignUpApiTest.cs" />
-    <Compile Include="Framework\StringHelper.cs" />
+    <Compile Include="Framework\Helpers\StringHelper.cs" />
     <Compile Include="Test\AccountTests.cs" />
     <Compile Include="Test\CartTests.cs" />
   </ItemGroup>
