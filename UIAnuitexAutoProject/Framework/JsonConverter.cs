@@ -44,7 +44,7 @@ namespace UIAnuitexAutoProject.Framework
             UserFromJson currentUserData = AllUserList.Where(x => x.Login == user.Login).FirstOrDefault();
             currentUserData.FirstName = s1;
             currentUserData.LastName = s2;
-            string output = Newtonsoft.Json.JsonConvert.SerializeObject(AllUserList, Formatting.Indented);
+            string output = JsonConvert.SerializeObject(AllUserList, Formatting.Indented);
             File.WriteAllText(_path, output);
         }
     }

@@ -32,7 +32,6 @@ namespace UIAnuitexAutoProject.Framework
 
         public string GetTitleSuccessfulAddedProductPopUp()
         {
-
             string title = SuccessfulAddedProductPopUp.Text;
             return title;
         }

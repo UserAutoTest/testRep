@@ -50,7 +50,6 @@ namespace UIAnuitexAutoProject.Framework.HomePage
             MenuButton.Click();
             return this;
         }
-
         
         public HomePage HoverFirstCategory()
         {
