@@ -11,7 +11,7 @@ namespace UIAnuitexAutoProject.Framework
 {
     public class JsonConverter
     {
-        public static string path = @"C:\Users\Anuitex\jsonNewFile.json";
+        public static string _path = @"C:\Users\Anuitex\jsonFile.json";
 
         private List<UserFromJson> _alluserlist;
         public List<UserFromJson> AllUserList
@@ -20,23 +20,32 @@ namespace UIAnuitexAutoProject.Framework
             {
                 if (_alluserlist == null)
                 {
-                    string json = File.ReadAllText(path);
+                    string json = File.ReadAllText(_path);
                     _alluserlist = JsonConvert.DeserializeObject<List<UserFromJson>>(json);
                 }
                 return _alluserlist;
             }
         }
 
-        public string ReadTextFromJson(string path)
-        {
-            string json = File.ReadAllText(path);
-            return json;
-        }
-
         public UserFromJson GetUser()
         {
-            UserFromJson currentUserData = AllUserList.FirstOrDefault();
+            UserFromJson currentUserData = AllUserList.LastOrDefault();
             return currentUserData;
-        }        
+        }    
+        
+        public UserFromJson GetDataByLogin(string login)
+        {
+            UserFromJson currentUserData = AllUserList.Where(x => x.Login == login).FirstOrDefault();
+            return currentUserData;
+        }
+
+        public void ReplaceUserDataInJson(UserFromJson user, string s1, string s2)
+        {
+            UserFromJson currentUserData = AllUserList.Where(x => x.Login == user.Login).FirstOrDefault();
+            currentUserData.FirstName = s1;
+            currentUserData.LastName = s2;
+            string output = Newtonsoft.Json.JsonConvert.SerializeObject(AllUserList, Formatting.Indented);
+            File.WriteAllText(_path, output);
+        }
     }
 }

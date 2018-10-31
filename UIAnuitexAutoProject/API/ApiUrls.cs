@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UIAnuitexAutoProject.Framework.API
 {
-    public static class ApiUrl
+    public static class ApiUrls
     {
         public static string BaseUrl => "https://www.walmart.com/";
 

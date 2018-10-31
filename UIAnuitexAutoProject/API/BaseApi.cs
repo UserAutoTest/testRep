@@ -10,7 +10,7 @@ using UIAnuitexAutoProject.Framework.API;
 
 namespace UIAnuitexAutoProject.Framework
 {
-    public class BaseApi1
+    public class BaseApi
     {
         protected RestRequest _request;
         private RestClient _client;
@@ -34,7 +34,7 @@ namespace UIAnuitexAutoProject.Framework
             Assert.AreEqual(expectedStatus, actualStatusCode, "Wrong actual API response.");
         }
 
-        public RestClient Client => _client ?? (_client = new RestClient(ApiUrl.BaseUrl));
+        public RestClient Client => _client ?? (_client = new RestClient(ApiUrls.BaseUrl));
         
     }
 }

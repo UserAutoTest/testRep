@@ -18,7 +18,7 @@ namespace UIAnuitexAutoProject.Framework
 
         public RightNavMenu ClickCreateAccountLink()
         {
-            Thread.Sleep(100);
+            _driver.WaitForElementToBeVisible(By.XPath(".//div[@class='GlobalAccountMenu-linkDescription']/div[contains(text(), 'Create Account')]"));
             CreateAccountLink.Click();
             return this;
         }

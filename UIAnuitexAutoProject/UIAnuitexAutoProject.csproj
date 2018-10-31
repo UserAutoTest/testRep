@@ -44,18 +44,16 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Framework\API\ApiUrl.cs" />
-    <Compile Include="Framework\API\BaseApi1.cs" />
+    <Compile Include="API\ApiUrls.cs" />
+    <Compile Include="API\BaseApi.cs" />
     <Compile Include="Framework\Models\ApiModels\ResponseModels\SignUpResponse.cs" />
     <Compile Include="Framework\ProductPage\AllProductInCategoryPage.cs" />
-    <Compile Include="Framework\API\BaseApi.cs" />
     <Compile Include="Framework\BaseTest.cs" />
     <Compile Include="Framework\CartPage\CartPage.cs" />
     <Compile Include="Framework\CheckOut\CheckOutPage.cs" />
     <Compile Include="Framework\CreateAccount\CreateYourAccount.cs" />
     <Compile Include="Framework\Extensions.cs" />
     <Compile Include="Framework\CheckOut\FulFillmentCheckOut.cs" />
-    <Compile Include="Framework\Helper.cs" />
     <Compile Include="Framework\Helpers\CookieHelper.cs" />
     <Compile Include="Framework\HomePage\HomePage.cs" />
     <Compile Include="Framework\JsonConverter.cs" />
@@ -69,11 +67,14 @@
     <Compile Include="Framework\ProfilePage.cs" />
     <Compile Include="Framework\SignInPage.cs" />
     <Compile Include="Framework\SignInUserNavMenu.cs" />
-    <Compile Include="Framework\API\SignUpApi.cs" />
-    <Compile Include="TestAPI\SignUpApiTest.cs" />
-    <Compile Include="Test\CreateEditAccount.cs" />
+    <Compile Include="API\SignUpApi.cs" />
+    <Compile Include="API\TestAPI\SignUpApiTest.cs" />
+    <Compile Include="Framework\StringHelper.cs" />
+    <Compile Include="Test\AccountTests.cs" />
+    <Compile Include="Test\CartTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>

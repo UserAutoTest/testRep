@@ -11,11 +11,11 @@ using UIAnuitexAutoProject.Framework.Models.ApiModels.ResponseModels;
 
 namespace UIAnuitexAutoProject.Framework
 {
-    public class SignUpApi : BaseApi1
+    public class SignUpApi : BaseApi
     {
         public SignUpApi()
         {
-            _request = new RestRequest(ApiUrl.SignUpApi, Method.POST);
+            _request = new RestRequest(ApiUrls.SignUpApi, Method.POST);
 
             _request.RequestFormat = DataFormat.Json;
 
@@ -42,6 +42,5 @@ namespace UIAnuitexAutoProject.Framework
             }
             return response;
         }
-
     }
 }

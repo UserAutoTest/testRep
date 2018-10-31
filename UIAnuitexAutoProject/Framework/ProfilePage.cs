@@ -65,7 +65,12 @@ namespace UIAnuitexAutoProject.Framework
             FirstManeField.SendKeys(firstName);
 
             LastNameField.Clear();
-            LastNameField.SendKeys(lastName);
+            LastNameField.SendKeys(lastName);  
+            return this;
+        }
+
+        public ProfilePage ClickSaveButton()
+        {
             SaveButton.Click();
             return this;
         }
