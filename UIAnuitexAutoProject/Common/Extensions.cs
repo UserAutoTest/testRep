@@ -1,9 +1,12 @@
-﻿using OpenQA.Selenium;
+﻿using Newtonsoft.Json;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
 using OpenQA.Selenium.Support.UI;
+using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,4 +33,14 @@ namespace UIAutoProject.Framework
                 return false;
             }
         }
-    }}
+
+        public static IRestRequest AddOrUpdatBody(this IRestRequest restRequest, object obj)
+        {
+            string serialized = JsonConvert.SerializeObject(obj);
+
+            string contentType = "application/json";
+
+            return restRequest.AddOrUpdateParameter(contentType, serialized, ParameterType.RequestBody);
+        }
+    }
+}

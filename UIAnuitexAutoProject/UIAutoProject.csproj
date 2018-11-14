@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="API\BaseApi.cs" />
     <Compile Include="API\ApiModels\ResponseModels\SignUpResponse.cs" />
+    <Compile Include="Common\ContentType.cs" />
     <Compile Include="Pages\AllProductInCategoryPage.cs" />
     <Compile Include="Common\BaseTest.cs" />
     <Compile Include="Pages\CartPage.cs" />

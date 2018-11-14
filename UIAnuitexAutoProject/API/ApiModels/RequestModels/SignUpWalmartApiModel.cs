@@ -7,28 +7,28 @@ using System.Threading.Tasks;
 
 namespace UIAutoProject.Framework.Models.ApiModels.RequestModels
 {
-    public class SignUpWalmartApiModel
+    public class WalmartApiSignUpModel
     {        
         [JsonProperty("captcha")]
-        public Captcha captcha { get; set; }
+        public Captcha Captcha { get; set; }
 
         [JsonProperty("personName")]
         public PersonNameModel personName { get; set; }
 
         [JsonProperty("email")]
-        public string email { get; set; }
+        public string Email { get; set; }
 
         [JsonProperty("password")]
-        public string password { get; set; }
+        public string Password { get; set; }
 
         [JsonProperty("rememberme")]
-        public bool rememberme { get; set; }
+        public bool Rememberme { get; set; }
 
         [JsonProperty("showRememberme")]
-        public bool showRememberme { get; set; }
+        public bool ShowRememberme { get; set; }
 
         [JsonProperty("emailNotificationAccepted")]
-        public bool emailNotificationAccepted { get; set; }
+        public bool EmailNotificationAccepted { get; set; }
     }
 }
 

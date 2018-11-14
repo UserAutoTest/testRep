@@ -9,9 +9,9 @@ using UIAutoProject.Framework.Models.ApiModels.ResponseModels;
 
 namespace UIAutoProject.Framework
 {
-    public class SignUpWalmartApi : BaseApi
+    public class WalmartApiSignUp : BaseApi
     {      
-        public SignUpWalmartApi()
+        public WalmartApiSignUp()
         {
             _request = new RestRequest(SignUpApi, Method.POST);
 
@@ -29,8 +29,8 @@ namespace UIAutoProject.Framework
 
         public SignUpResponse CallSignUpApi(object myBodyModel= null, HttpStatusCode expectedResponse = HttpStatusCode.OK)
         {
-            _request.AddBody(myBodyModel);
-
+            _request.AddOrUpdatBody(myBodyModel);
+           
             SignUpResponse response = ExecuteRequest<SignUpResponse>();
           
             return response;
