@@ -10,7 +10,7 @@ namespace UIAutoProject.Framework.Models.ApiModels.RequestModels
     public class Captcha
     {
         [JsonProperty("sensorData")]
-        public string SensorData { get; set; }
+        public string sensorData { get; set; }
 
     }
 }

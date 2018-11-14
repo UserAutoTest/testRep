@@ -6,7 +6,6 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using UIAutoProject.Framework.API;
 
 namespace UIAutoProject.Framework
 {
@@ -34,7 +33,6 @@ namespace UIAutoProject.Framework
             Assert.AreEqual(expectedStatus, actualStatusCode, "Wrong actual API response.");
         }
 
-        public RestClient Client => _client ?? (_client = new RestClient(WalmartApiUrls.BaseUrl));
-        
+        public RestClient Client => _client ?? (_client = new RestClient("https://www.walmart.com/"));        
     }
 }

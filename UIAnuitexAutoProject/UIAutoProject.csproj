@@ -40,11 +40,12 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\WalmartApiUrls.cs" />
     <Compile Include="API\BaseApi.cs" />
     <Compile Include="API\ApiModels\ResponseModels\SignUpResponse.cs" />
     <Compile Include="Pages\AllProductInCategoryPage.cs" />
@@ -54,7 +55,6 @@
     <Compile Include="Pages\CreateYourAccount.cs" />
     <Compile Include="Common\Extensions.cs" />
     <Compile Include="Pages\FulFillmentCheckOut.cs" />
-    <Compile Include="Pages\CookieHelper.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Common\JsonConverter.cs" />
     <Compile Include="API\ApiModels\RequestModels\Captcha.cs" />
