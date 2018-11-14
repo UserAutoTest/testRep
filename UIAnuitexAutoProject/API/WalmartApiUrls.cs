@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UIAnuitexAutoProject.Framework.API
+namespace UIAutoProject.Framework.API
 {
-    public static class ApiUrls
+    public static class WalmartApiUrls
     {
         public static string BaseUrl => "https://www.walmart.com/";
 

@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UIAnuitexAutoProject.Framework.Models.ApiModels.RequestModels
+namespace UIAutoProject.Framework.Models.ApiModels.RequestModels
 {
     public class PersonNameModel
     {
         [JsonProperty("firstName")]
-        public string firstName { get; set; }
+        public string FirstName { get; set; }
 
         [JsonProperty("lastName")]
-        public string lastName { get; set; }
+        public string LastName { get; set; }
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UIAnuitexAutoProject.Framework.Models.ApiModels.ResponseModels
+namespace UIAutoProject.Framework.Models.ApiModels.ResponseModels
 {
     public class SignUpResponse
     {

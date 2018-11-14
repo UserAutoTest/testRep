@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace UIAnuitexAutoProject.Framework
+namespace UIAutoProject.Framework
 {
     public class RightNavMenu : PageObject
     {

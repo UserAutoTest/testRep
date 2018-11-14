@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace UIAnuitexAutoProject.Framework.HomePage
+namespace UIAutoProject.Framework.HomePage
 {
     public class HomePage : PageObject
     {    

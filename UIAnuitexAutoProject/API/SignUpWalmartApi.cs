@@ -5,17 +5,17 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using UIAnuitexAutoProject.Framework.API;
-using UIAnuitexAutoProject.Framework.Helpers;
-using UIAnuitexAutoProject.Framework.Models.ApiModels.ResponseModels;
+using UIAutoProject.Framework.API;
+using UIAutoProject.Framework.Helpers;
+using UIAutoProject.Framework.Models.ApiModels.ResponseModels;
 
-namespace UIAnuitexAutoProject.Framework
+namespace UIAutoProject.Framework
 {
-    public class SignUpApi : BaseApi
-    {
-        public SignUpApi()
+    public class SignUpWalmartApi : BaseApi
+    {      
+        public SignUpWalmartApi()
         {
-            _request = new RestRequest(ApiUrls.SignUpApi, Method.POST);
+            _request = new RestRequest(WalmartApiUrls.SignUpApi, Method.POST);
 
             _request.RequestFormat = DataFormat.Json;
 
@@ -24,8 +24,12 @@ namespace UIAnuitexAutoProject.Framework
             _request.AddParameter("Content-Type", "application/json; charset=utf-8");
 
             _request.AddParameter("ref", "domain");
-
         }
+
+        public string BaseUrl => "https://www.walmart.com/";
+
+        public string SignUpApi => $"{BaseUrl}account/electrode/api/signup?ref=domain";
+
 
         public SignUpResponse CallSignUpApi(object myBodyModel= null, HttpStatusCode expectedResponse = HttpStatusCode.OK)
         {

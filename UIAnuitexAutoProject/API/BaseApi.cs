@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
-using UIAnuitexAutoProject.Framework.API;
+using UIAutoProject.Framework.API;
 
-namespace UIAnuitexAutoProject.Framework
+namespace UIAutoProject.Framework
 {
     public class BaseApi
     {
@@ -34,7 +34,7 @@ namespace UIAnuitexAutoProject.Framework
             Assert.AreEqual(expectedStatus, actualStatusCode, "Wrong actual API response.");
         }
 
-        public RestClient Client => _client ?? (_client = new RestClient(ApiUrls.BaseUrl));
+        public RestClient Client => _client ?? (_client = new RestClient(WalmartApiUrls.BaseUrl));
         
     }
 }

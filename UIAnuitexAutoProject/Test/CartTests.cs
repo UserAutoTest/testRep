@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using UIAnuitexAutoProject.Framework;
-using UIAnuitexAutoProject.Framework.HomePage;
-using UIAnuitexAutoProject.Framework.Models;
+using UIAutoProject.Framework;
+using UIAutoProject.Framework.HomePage;
+using UIAutoProject.Framework.Models;
 
-namespace UIAnuitexAutoProject.Test
+namespace UIAutoProject.Test
 {
     public class CartTests : BaseTest
     {

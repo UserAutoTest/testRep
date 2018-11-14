@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
-using UIAnuitexAutoProject.Framework.Models;
+using UIAutoProject.Framework.Models;
 
-namespace UIAnuitexAutoProject.Framework
+namespace UIAutoProject.Framework
 {
     public class SignInPage : PageObject
     {

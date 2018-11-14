@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UIAnuitexAutoProject.Framework.Models
+namespace UIAutoProject.Framework.Models
 {
     public class UserFromJson
     {

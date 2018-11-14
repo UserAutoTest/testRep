@@ -1,10 +1,10 @@
 ﻿using NUnit.Framework;
 using System;
-using UIAnuitexAutoProject.Framework;
-using UIAnuitexAutoProject.Framework.HomePage;
-using UIAnuitexAutoProject.Framework.Models;
+using UIAutoProject.Framework;
+using UIAutoProject.Framework.HomePage;
+using UIAutoProject.Framework.Models;
 
-namespace UIAnuitexAutoProject.Test
+namespace UIAutoProject.Test
 {
     public class AccountTests : BaseTest
     {

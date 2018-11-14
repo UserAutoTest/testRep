@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UIAnuitexAutoProject.Framework
+namespace UIAutoProject.Framework
 {
     public static class Extensions
     {
