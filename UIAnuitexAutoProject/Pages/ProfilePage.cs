@@ -87,11 +87,11 @@ namespace UIAutoProject.Framework
             return this;
         }
 
-        public UserFromJson GetUserPassByLogin()
+        public User GetUserPassByLogin()
         {
             var login = GetUserLoginFromConfirmPopUp();
-            JsonConverter jsonConverter = new JsonConverter();
-            UserFromJson currentUserData = jsonConverter.AllUserList.Where(x => x.Login == login).FirstOrDefault();
+            UserHelper jsonConverter = new UserHelper();
+            User currentUserData = jsonConverter.AllUserList.Where(x => x.Login == login).FirstOrDefault();
             return currentUserData;
         }
 

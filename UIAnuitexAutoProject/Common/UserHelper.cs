@@ -9,39 +9,39 @@ using UIAutoProject.Framework.Models;
 
 namespace UIAutoProject.Framework
 {
-    public class JsonConverter
+    public class UserHelper
     {
         public static string _path = @"C:\Users\Anuitex\jsonFile.json";
 
-        private List<UserFromJson> _alluserlist;
-        public List<UserFromJson> AllUserList
+        private List<User> _alluserlist;
+        public List<User> AllUserList
         {
             get
             {
                 if (_alluserlist == null)
                 {
                     string json = File.ReadAllText(_path);
-                    _alluserlist = JsonConvert.DeserializeObject<List<UserFromJson>>(json);
+                    _alluserlist = JsonConvert.DeserializeObject<List<User>>(json);
                 }
                 return _alluserlist;
             }
         }
 
-        public UserFromJson GetUser()
+        public User GetUser()
         {
-            UserFromJson currentUserData = AllUserList.LastOrDefault();
+            User currentUserData = AllUserList.LastOrDefault();
             return currentUserData;
         }    
         
-        public UserFromJson GetDataByLogin(string login)
+        public User GetDataByLogin(string login)
         {
-            UserFromJson currentUserData = AllUserList.Where(x => x.Login == login).FirstOrDefault();
+            User currentUserData = AllUserList.Where(x => x.Login == login).FirstOrDefault();
             return currentUserData;
         }
 
-        public void ReplaceUserDataInJson(UserFromJson user, string s1, string s2)
+        public void ReplaceUserDataInJson(User user, string s1, string s2)
         {
-            UserFromJson currentUserData = AllUserList.Where(x => x.Login == user.Login).FirstOrDefault();
+            User currentUserData = AllUserList.Where(x => x.Login == user.Login).FirstOrDefault();
             currentUserData.FirstName = s1;
             currentUserData.LastName = s2;
             string output = JsonConvert.SerializeObject(AllUserList, Formatting.Indented);

@@ -13,15 +13,12 @@ namespace UIAutoProject.Framework
     {
         protected RestRequest _request;
         private RestClient _client;
-        public static IList<RestResponseCookie> _allResponseCookie;
 
         public T ExecuteRequest<T>(HttpStatusCode code = HttpStatusCode.OK) where T : new()
         {
             var response = Client.Execute<T>(_request);
 
             CheckResponse(code, response.StatusCode);
-
-            _allResponseCookie = response.Cookies;
 
             var resposeData = response.Data;
 

@@ -19,21 +19,21 @@ namespace UIAutoProject.Framework
 
         public IWebElement SignInButton => _driver.FindElement(By.XPath(".//button[@data-automation-id='signin-submit-btn']"));
         
-        public SignInPage FillInEmailAddressInput(UserFromJson user)
+        public SignInPage FillInEmailAddressInput(User user)
         {
             _driver.WaitForElementToBeVisible(By.XPath(".//input[@data-tl-id='signin-email-input']"));
             EmailAddressInput.SendKeys(user.Login);
             return this;
         }
 
-        public SignInPage FillInPasswordInput(UserFromJson user)
+        public SignInPage FillInPasswordInput(User user)
         {
             _driver.WaitForElementToBeVisible(By.XPath(".//input[@data-tl-id='signin-password-input']"));
             PasswordInput.SendKeys(user.Password);
             return this;
         }
 
-        public SignInPage FillInSignInForm(UserFromJson user)
+        public SignInPage FillInSignInForm(User user)
         {
             EmailAddressInput.SendKeys(user.Login);
             PasswordInput.SendKeys(user.Password);

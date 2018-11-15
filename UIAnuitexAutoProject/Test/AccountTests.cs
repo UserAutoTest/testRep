@@ -9,34 +9,6 @@ namespace UIAutoProject.Test
     public class AccountTests : BaseTest
     {
         [Test]
-        public void SignInTest()
-        {
-            HomePage homePage = new HomePage(Driver);
-            RightNavMenu rightNavMenu = new RightNavMenu(Driver);            
-            JsonConverter jsonConverter = new JsonConverter();
-            UserFromJson user = jsonConverter.GetUser();
-            SignInPage signInPage = new SignInPage(Driver);
-            ProfilePage profilePage = new ProfilePage(Driver);
-            StringHelper stringHelper = new StringHelper();
-
-            homePage
-                .ClickAccountIcon();
-            rightNavMenu
-                .ClickSignInLink();
-            signInPage
-                .FillInEmailAddressInput(user)
-                .FillInPasswordInput(user)
-                .ClickSignInButton();
-            profilePage
-                .ClickAccountIconForSignInUser();
-
-            var firstleterFName = stringHelper.LeftFirstSymbol(user.FirstName);
-            var firstleterLName = stringHelper.LeftFirstSymbol(user.LastName);
-
-            Assert.AreEqual($"{firstleterFName}{firstleterLName}", homePage.GetAcountIconValue(), "User was successfuly sign in");
-        }
-
-        [Test]
         public void CreateNewAccount()
         {
             HomePage homePage = new HomePage(Driver);
@@ -66,8 +38,8 @@ namespace UIAutoProject.Test
         {
             HomePage homePage = new HomePage(Driver);
             ProfilePage profilePage = new ProfilePage(Driver);
-            JsonConverter jsonConverter = new JsonConverter();
-            UserFromJson user = jsonConverter.GetUser();
+            UserHelper jsonConverter = new UserHelper();
+            User user = jsonConverter.GetUser();
             SignInPage signInPage = new SignInPage(Driver);
             RightNavMenu rightNavMenu = new RightNavMenu(Driver);
 

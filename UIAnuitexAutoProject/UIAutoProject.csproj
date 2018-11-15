@@ -48,7 +48,6 @@
   <ItemGroup>
     <Compile Include="API\BaseApi.cs" />
     <Compile Include="API\ApiModels\ResponseModels\SignUpResponse.cs" />
-    <Compile Include="Common\ContentType.cs" />
     <Compile Include="Pages\AllProductInCategoryPage.cs" />
     <Compile Include="Common\BaseTest.cs" />
     <Compile Include="Pages\CartPage.cs" />
@@ -57,7 +56,7 @@
     <Compile Include="Common\Extensions.cs" />
     <Compile Include="Pages\FulFillmentCheckOut.cs" />
     <Compile Include="Pages\HomePage.cs" />
-    <Compile Include="Common\JsonConverter.cs" />
+    <Compile Include="Common\UserHelper.cs" />
     <Compile Include="API\ApiModels\RequestModels\Captcha.cs" />
     <Compile Include="API\ApiModels\RequestModels\PersonNameModel.cs" />
     <Compile Include="API\ApiModels\RequestModels\SignUpWalmartApiModel.cs" />

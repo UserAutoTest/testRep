@@ -13,7 +13,7 @@ namespace UIAutoProject.Framework.Models.ApiModels.RequestModels
         public Captcha Captcha { get; set; }
 
         [JsonProperty("personName")]
-        public PersonNameModel personName { get; set; }
+        public PersonNameModel PersonName { get; set; }
 
         [JsonProperty("email")]
         public string Email { get; set; }

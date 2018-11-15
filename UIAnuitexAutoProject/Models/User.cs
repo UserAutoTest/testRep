@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UIAutoProject.Framework.Models
 {
-    public class UserFromJson
+    public class User
     {
         public string Login { get; set; }
         public string Password { get; set; }
